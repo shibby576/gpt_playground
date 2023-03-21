@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<head>
+  <title>Summarize data</title>
+  <link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='dog.png') }}"
+  />
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+
+<body>
+  <!-- <img src="{{ url_for('static', filename='dog.png') }}" class="icon" /> -->
+  <h3>Summarize data with OpenAI</h3>
+  <form action="/" method="post">
+    <!-- <input type="textarea" name="data" rows="5" cols="33" placeholder="Enter data or a table in text" required /> -->
+    <textarea name="data" id="textInput" rows="5" cols="33" placeholder="Enter data or a table in text"></textarea>
+    <input type="submit" value="Generate summary" onclick="displayInput()"/>
+  </form>
+  <p id="question"></p>
+  {% if result %}
+  <div class="result">{{ result }}</div>
+  {% endif %}
+
+
+  <script>
+      
+//  store input and display it
+    function displayInput() {
+        var x = document.getElementById("textInput").value;
+        document.getElementById("question").innerHTML = x;
+    }
+  </script>
+
+
+</body>
