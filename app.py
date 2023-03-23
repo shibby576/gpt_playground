@@ -24,7 +24,7 @@ def index():
 
 
 def generate_prompt(data):
-    return """What are the trends in this data? 
+    return """Write an executive summary about the trends in data below 
     
     {}""".format(
         data.capitalize()

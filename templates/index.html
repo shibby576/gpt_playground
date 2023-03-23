@@ -2,34 +2,42 @@
 <!DOCTYPE html>
 <head>
   <title>Summarize data</title>
-  <link
-    rel="shortcut icon"
-    href="{{ url_for('static', filename='dog.png') }}"
-  />
   <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
 </head>
 
 <body>
-  <!-- <img src="{{ url_for('static', filename='dog.png') }}" class="icon" /> -->
-  <h3>Summarize data with OpenAI</h3>
+  <h3>Generate a summary of your data</h3>
+  <div>How it works</div>
+  <ul>
+    <li>Copy a table of data from a spreadsheet</li>
+    <li>Paste it into the textbox below</li>
+    <li>Click Generate Summary and receive a written summary!</li>
+    <li>Generate another summary based on the same or new data</li>
+  </ul>
   <form action="/" method="post">
-    <!-- <input type="textarea" name="data" rows="5" cols="33" placeholder="Enter data or a table in text" required /> -->
     <textarea name="data" id="textInput" rows="5" cols="33" placeholder="Enter data or a table in text"></textarea>
-    <input type="submit" value="Generate summary" onclick="displayInput()"/>
+    <button type="submit" class="button" onclick="storeInput();this.classList.toggle('button--loading')"><span class="button__text">Generate summary</span></button>
   </form>
-  <p id="question"></p>
-  {% if result %}
-  <div class="result">{{ result }}</div>
-  {% endif %}
+  
 
+  {% if result %}
+  <div class="result_title">AI generated summary of your data:</div>
+  <div class="result">{{ result }}</div>
+  <button id="original" onclick="displayInput()">Click to see input data</button>
+  <p id="question"></p>
+  {% endif %}
 
   <script>
       
-//  store input and display it
-    function displayInput() {
+    function storeInput() {
         var x = document.getElementById("textInput").value;
+        sessionStorage.setItem("input",x);
+    }
+    function displayInput() {
+        var x = sessionStorage.getItem("input");
         document.getElementById("question").innerHTML = x;
     }
+    
   </script>
 
 
