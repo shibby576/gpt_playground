@@ -1,2 +1,4 @@
-# gpt_playground
+# Data summarization with OpenAI
+
+https://data-summarizer.herokuapp.com/
  
