@@ -7,5 +7,8 @@ With all of the progress happening then in generative AI space, I felt compelled
 
 This made me think back to all of the time that ive spent in the past generating beautiful tables or charts only having to spend just as long writing a nice written summary of what that chart is showing. With that painpoint in mind, I designed a prompt and wired it up with text-davinci-003 model to output nice summaries of data. 
 
-The app is very simple (and not very good looking!) for now, but i plan to enhance the design so that the trends and inputs are more clear. I'd also like to add the ability to create charts out of written data, basically doing the opposite of the current application. 
- 
+The app is very simple (and not very good looking!) for now, but it was a great way to begin understanding how these models might be used. For example, this app simply provides a stock prompt to the model along with the user's input, which produces okay results. What can make it better is providing context or examples to further tailor the response. 
+
+Further, what im more excited to try next is the idea of embeddings and fine tuning, which from what i understand are ways to tailor the existing models to custom data. To me, this is where the real power of these models reside, giving those witch unique data the ability to super charge these models into something noone else can. 
+
+More enhancements to come here!
