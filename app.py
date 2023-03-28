@@ -12,7 +12,7 @@ def index():
     if request.method == "POST":
         data = request.form["data"]
         response = openai.Completion.create(
-            model="gpt-4",
+            model="text-davinci-003",
             prompt=generate_prompt(data),
             temperature=0.79,
             max_tokens = 250
